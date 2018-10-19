@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
+import RegularError from '../component/regular-error.js'
 
 class HandleError extends Component {
-    componentDidCatch(error,info) {
+    state = {
+        handleError:false,
+    }
+    componentDidCatch(error, info) {
         this.setState({
-            HandleError: true,
+            handleError: true,
         })
         //envia este error a un servicio como Sentry
     }
     render(){
-        if(this.HandleError) {
+        if(this.state.handleError) {
             return(
-                <p> ha ocurrido un error</p>
+                <RegularError />
             )
 
         }

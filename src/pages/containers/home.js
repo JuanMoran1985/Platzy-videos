@@ -2,15 +2,13 @@ import React, { Component } from 'react';
 import HomeLayout from '../components/home-layout';
 import Categories from '../../categories/components/categories';
 import Related from '../components/related';
-import ModalContainer from '../../widgets/containers/Modal.js'
+import ModalContainer from '../../widgets/containers/Modal.js';
 import Modal from '../../widgets/components/modal';
-import HamdleError from '../../error/container/handle-error.js'
 import HandleError from '../../error/container/handle-error.js';
 
 class Home extends Component {
   state = {
     modalVisible: false,
-    handleError: false,
   }
   handleOpenModal = () => {
     this.setState({
@@ -27,7 +25,7 @@ class Home extends Component {
       <HandleError>
         <HomeLayout>
           <Related />
-          <Categories categories={this.props.data.categories}
+          <Categories categories={this.props.data}
             handleOpenModal={this.handleOpenModal} />
           {
             this.state.modalVisible &&
