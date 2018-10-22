@@ -8,6 +8,7 @@ class SearchContainer extends Component {
     handleSubmit = event=> {
         event.preventDefault();
         console.log(this.input.value, 'submit')
+        //aqui iria el post 
     }
     // si resivimos solo un parametro no hace falta poner los () al event. 
     setInputRef = element => {
