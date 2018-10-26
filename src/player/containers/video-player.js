@@ -2,13 +2,26 @@ import React, { Component } from 'react';
 import VideoPlayerLayout from '../component/video-player-layout'
 import Video from '../component/video';
 import Title from '../component/title';
+import PlayPause from '../component/play-pausa.js'
 
 class VideoPlayer extends Component {
+    state={
+        pause= true,
+    }
+    TogglePlay = (event) => {
+        this.setState({
+            pause: !this.state.pause
+        })
+    }
     render() {
         return (
             <VideoPlayerLayout>
                 <Title
                     title="titulo video"
+                />
+                <PlayPause 
+                    pause={this.state.pause}
+                    hancleClick={this.TogglePlay}
                 />
                 <Video
                     autoplay={true}
